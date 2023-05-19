@@ -193,12 +193,56 @@ const findFirstDiscountIndex = (product) => {
 const firstDiscountIndex = findFirstDiscountIndex((productsData))
 
 
+// const initProductsElement2 = () => {
+//     const productsDataElement2 = document.querySelector("#home-flashsale .row");
+//     const processingProductsCard = productsData.map((product, index) => {
+//         const { productName, productInfo, image, imageAfter, discount, oldPrice, currentPrice, id } = product;
+//         if (discount !== 0 && id===firstDiscountIndex) {
+//             return `<div class="box-01 carousel-item active" data-bs-interval="10000">
+//     <div class="img-container">
+//     <img class="img-before" src=${image} alt="">
+//     <img class="img-after" src=${imageAfter} alt="">
+//         <span class="discount">${discount}%</span>
+//     </div>
+//     <div class="product-name"><a href="">${productName}</div>
+//     </a>
+//     <div class="product-info">${productInfo}
+//     </div>
+//     <div class="price">
+//         <div class="old-price">${oldPrice}</div>
+//         <div class="current-price">${currentPrice}</div>
+//     </div>
+//     <button class="my-btn">Mua ngay</button>
+// </div>`}
+// else if (discount !==0 && id !==firstDiscountIndex) {
+//     return `<div class="box-01 carousel-item" data-bs-interval="2000">
+//     <div class="img-container">
+//     <img class="img-before" src=${image} alt="">
+//     <img class="img-after" src=${imageAfter} alt="">
+//         <span class="discount">${discount}%</span>
+//     </div>
+//     <div class="product-name"><a href="">${productName}</div>
+//     </a>
+//     <div class="product-info">${productInfo}
+//     </div>
+//     <div class="price">
+//         <div class="old-price">${oldPrice}</div>
+//         <div class="current-price">${currentPrice}</div>
+//     </div>
+//     <button class="my-btn">Mua ngay</button>
+// </div>`
+// }
+//     })
+//     console.log(processingProductsCard);
+//     productsDataElement2.innerHTML = processingProductsCard.join("");
+// }
+
 const initProductsElement2 = () => {
-    const productsDataElement2 = document.querySelector("#home-flashsale .row");
+    const productsDataElement2 = document.querySelector("#home-flashsale .slider-wrapper");
     const processingProductsCard = productsData.map((product, index) => {
         const { productName, productInfo, image, imageAfter, discount, oldPrice, currentPrice, id } = product;
-        if (discount !== 0 && id===firstDiscountIndex) {
-            return `<div class="box-01 carousel-item active" data-bs-interval="10000">
+        if (discount !== 0) {
+            return `<div class="box-01 swiper-slide">
     <div class="img-container">
     <img class="img-before" src=${image} alt="">
     <img class="img-after" src=${imageAfter} alt="">
@@ -214,54 +258,14 @@ const initProductsElement2 = () => {
     </div>
     <button class="my-btn">Mua ngay</button>
 </div>`}
-else if (discount !==0 && id !==firstDiscountIndex) {
-    return `<div class="box-01 carousel-item" data-bs-interval="2000">
-    <div class="img-container">
-    <img class="img-before" src=${image} alt="">
-    <img class="img-after" src=${imageAfter} alt="">
-        <span class="discount">${discount}%</span>
-    </div>
-    <div class="product-name"><a href="">${productName}</div>
-    </a>
-    <div class="product-info">${productInfo}
-    </div>
-    <div class="price">
-        <div class="old-price">${oldPrice}</div>
-        <div class="current-price">${currentPrice}</div>
-    </div>
-    <button class="my-btn">Mua ngay</button>
-</div>`
-}
     })
     console.log(processingProductsCard);
     productsDataElement2.innerHTML = processingProductsCard.join("");
 }
 
 
-
 initProductsElement2();
 
-$('#recipeCarousel').carousel({
-    interval: 10000
-  })
-
-$('.carousel .carousel-item').each(function(){
-    var minPerSlide = 4;
-    var next = $(this).next();
-    if (!next.length) {
-    next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-    
-    for (var i=0;i<minPerSlide;i++) {
-        next=next.next();
-        if (!next.length) {
-        	next = $(this).siblings(':first');
-      	}
-        
-        next.children(':first-child').clone().appendTo($(this));
-      }
-});
 
 
 // Hover Effect: Function để thay đổi ảnh khi hover
