@@ -5,7 +5,8 @@ productsData = [{
     imageAfter: "./assets/hover-mirror.jpg",
     discount: 0,
     oldPrice: "",
-    currentPrice: "19,890,000₫"
+    currentPrice: "19,890,000₫",
+    id: "1"
 },
 {
     productName: "GUYON 02",
@@ -14,7 +15,8 @@ productsData = [{
     imageAfter: "./assets/hover-cabinet.jpg",
     discount: 0,
     oldPrice: "",
-    currentPrice: "3,290,000₫"
+    currentPrice: "3,290,000₫",
+    id: "2"
 },
 {
     productName: "INDIANA",
@@ -23,7 +25,8 @@ productsData = [{
     imageAfter: "./assets/hover-sofa.jpg",
     discount: -5,
     oldPrice: "19,890,000₫",
-    currentPrice: "18,890,000₫"
+    currentPrice: "18,890,000₫",
+    id: "3"
 },
 {
     productName: "DOUBLE HANGER SIZE L NATURAL",
@@ -32,7 +35,8 @@ productsData = [{
     imageAfter: "./assets/hover-doublehanger.jpg",
     discount: -41,
     oldPrice: "1,690,000₫",
-    currentPrice: "999,000₫"
+    currentPrice: "999,000₫",
+    id: "4"
 },
 {
     productName: "POET BED NATURAL",
@@ -41,7 +45,9 @@ productsData = [{
     imageAfter: "./assets/hover-poetbed.jpg",
     discount: -5,
     oldPrice: "",
-    currentPrice: "9,090,000₫"
+    currentPrice: "9,090,000₫",
+    id: "5"
+
 },
 {
     productName: "COMBO 3 TỦ QUẦN ÁO MANDY NATURAL",
@@ -50,7 +56,8 @@ productsData = [{
     imageAfter: "./assets/hover-wardrobe.jpg",
     discount: -5,
     oldPrice: "15,870,000₫",
-    currentPrice: "15,070,000₫"
+    currentPrice: "15,070,000₫",
+    id: "6"
 },
 
 {
@@ -60,7 +67,8 @@ productsData = [{
     imageAfter: "./assets/hover-caracoffeetable.jpg",
     discount: 0,
     oldPrice: "",
-    currentPrice: "5,450,000₫"
+    currentPrice: "5,450,000₫",
+    id: "13"
 },
 {
     productName: "VIENNA",
@@ -69,7 +77,8 @@ productsData = [{
     imageAfter: "./assets/hover-vienna.jpg",
     discount: -5,
     oldPrice: "17,390,000₫",
-    currentPrice: "16,520,000₫"
+    currentPrice: "16,520,000₫",
+    id: "7"
 },
 {
     productName: "Morel",
@@ -78,7 +87,8 @@ productsData = [{
     imageAfter: "./assets/hover-sofa.jpg",
     discount: -10,
     oldPrice: "27,990,000₫",
-    currentPrice: "26,590,000₫"
+    currentPrice: "26,590,000₫",
+    id: "8"
 },
 {
     productName: "AME TIVI SHELF",
@@ -87,7 +97,8 @@ productsData = [{
     imageAfter: "./assets/hover-ametvshelf.jpg",
     discount: 0,
     oldPrice: "",
-    currentPrice: "5,390,000₫"
+    currentPrice: "5,390,000₫",
+    id: "9"
 },
 {
     productName: "MITHRIL COFFEE TABLE",
@@ -96,7 +107,8 @@ productsData = [{
     imageAfter: "./assets/hover-mithrel.jpg",
     discount: 0,
     oldPrice: "",
-    currentPrice: "7,619,000₫"
+    currentPrice: "7,619,000₫",
+    id: "10"
 },
 {
     productName: "FRANE COFFEE TABLE",
@@ -105,15 +117,19 @@ productsData = [{
     imageAfter: "./assets/hover-caracoffeetable.jpg",
     discount: 0,
     oldPrice: "",
-    currentPrice: "4,229,000₫"
+    currentPrice: "4,229,000₫",
+    id: "11"
 },
-{productName: "Bee Table White",
-productInfo: "Bàn Trà - Bàn Sofa",
-image: "./assets/carousel-beetable.jpg",
-imageAfter: "./assets/hover-beetable.jpg",
-discount: -41,
-oldPrice: "459,000₫",
-currentPrice: "299,000₫"}
+{
+    productName: "Bee Table White",
+    productInfo: "Bàn Trà - Bàn Sofa",
+    image: "./assets/carousel-beetable.jpg",
+    imageAfter: "./assets/hover-beetable.jpg",
+    discount: -41,
+    oldPrice: "459,000₫",
+    currentPrice: "299,000₫",
+    id: "12"
+}
 
 ]
 
@@ -138,7 +154,7 @@ const initProductsElement = () => {
             <div class="old-price">${oldPrice}</div>
             <div class="current-price">${currentPrice}</div>
         </div>
-        <button class="btn">Mua ngay</button>
+        <button class="my-btn">Mua ngay</button>
     </div>`
         }
         else {
@@ -157,24 +173,76 @@ const initProductsElement = () => {
         <div class="old-price">${oldPrice}</div>
         <div class="current-price">${currentPrice}</div>
     </div>
-    <button class="btn">Mua ngay</button>
+    <button class="my-btn">Mua ngay</button>
 
 </div>`};
 
     }
-    console.log(listProducts);
     productsDataElement.innerHTML = listProducts;
 };
 initProductsElement();
 
+
 // function để tạo caroulsel/slider
 
+const findFirstDiscountIndex = (product) => {
+    for (let i = 0; i < product.length; i++) {
+        if (product[i].discount !== 0) { return product[i].id }
+    };
+}
+const firstDiscountIndex = findFirstDiscountIndex((productsData))
+
+
+// const initProductsElement2 = () => {
+//     const productsDataElement2 = document.querySelector("#home-flashsale .row");
+//     const processingProductsCard = productsData.map((product, index) => {
+//         const { productName, productInfo, image, imageAfter, discount, oldPrice, currentPrice, id } = product;
+//         if (discount !== 0 && id===firstDiscountIndex) {
+//             return `<div class="box-01 carousel-item active" data-bs-interval="10000">
+//     <div class="img-container">
+//     <img class="img-before" src=${image} alt="">
+//     <img class="img-after" src=${imageAfter} alt="">
+//         <span class="discount">${discount}%</span>
+//     </div>
+//     <div class="product-name"><a href="">${productName}</div>
+//     </a>
+//     <div class="product-info">${productInfo}
+//     </div>
+//     <div class="price">
+//         <div class="old-price">${oldPrice}</div>
+//         <div class="current-price">${currentPrice}</div>
+//     </div>
+//     <button class="my-btn">Mua ngay</button>
+// </div>`}
+// else if (discount !==0 && id !==firstDiscountIndex) {
+//     return `<div class="box-01 carousel-item" data-bs-interval="2000">
+//     <div class="img-container">
+//     <img class="img-before" src=${image} alt="">
+//     <img class="img-after" src=${imageAfter} alt="">
+//         <span class="discount">${discount}%</span>
+//     </div>
+//     <div class="product-name"><a href="">${productName}</div>
+//     </a>
+//     <div class="product-info">${productInfo}
+//     </div>
+//     <div class="price">
+//         <div class="old-price">${oldPrice}</div>
+//         <div class="current-price">${currentPrice}</div>
+//     </div>
+//     <button class="my-btn">Mua ngay</button>
+// </div>`
+// }
+//     })
+//     console.log(processingProductsCard);
+//     productsDataElement2.innerHTML = processingProductsCard.join("");
+// }
+
 const initProductsElement2 = () => {
-    const productsDataElement2 = document.querySelector("#home-flashsale .slider");
-    const processingProductsCard = productsData.map((product) => {
-        const { productName, productInfo, image, imageAfter, discount, oldPrice, currentPrice } = product;
-        if (discount !==0 ) {
-            return `<div class="box-01">
+    const productsDataElement2 = document.querySelector("#home-flashsale .slider-wrapper");
+    const processingProductsCard = productsData.map((product, index) => {
+        const { productName, productInfo, image, imageAfter, discount, oldPrice, currentPrice, id } = product;
+        if (discount !== 0) {
+            return `<div class="box-01 swiper-slide">
     <div class="img-container">
     <img class="img-before" src=${image} alt="">
     <img class="img-after" src=${imageAfter} alt="">
@@ -188,33 +256,32 @@ const initProductsElement2 = () => {
         <div class="old-price">${oldPrice}</div>
         <div class="current-price">${currentPrice}</div>
     </div>
-    <button class="btn">Mua ngay</button>
-
+    <button class="my-btn">Mua ngay</button>
 </div>`}
-
-    }
-    )
+    })
     console.log(processingProductsCard);
     productsDataElement2.innerHTML = processingProductsCard.join("");
-};
-
+}
 
 
 initProductsElement2();
 
-$('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
-        }
+
+
+// Hover Effect: Function để thay đổi ảnh khi hover
+
+const box = document.querySelectorAll(".box-01")
+const img = document.querySelectorAll(".img-after")
+
+
+for (let i = 0; i < box.length; i++) {
+    box[i].onmouseover = function () {
+        img[i].classList.add("active");
     }
-})
+}
+
+for (let i = 0; i < box.length; i++) {
+    box[i].onmouseout = function () {
+        img[i].classList.remove("active");
+    }
+}
