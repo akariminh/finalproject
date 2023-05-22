@@ -195,7 +195,7 @@ const initProductsElement = () => {
             </div>
             <div class="price">
                 <div class="old-price">${price.toLocaleString('en-US')}₫</div>
-                <div class="current-price">${(price*(100-discount)/100).toLocaleString('en-US')}₫</div>
+                <div class="current-price">${(price * (100 - discount) / 100).toLocaleString('en-US')}₫</div>
             </div>
             <button class="my-btn" onclick="addProductToCart()">Mua ngay</button></div>
         </div>`};
@@ -277,7 +277,7 @@ const initProductsElement2 = () => {
             </div>
             <div class="price">
             <div class="old-price">${price.toLocaleString('en-US')}₫</div>
-            <div class="current-price">${(price*(100-discount)/100).toLocaleString('en-US')}₫</div>
+            <div class="current-price">${(price * (100 - discount) / 100).toLocaleString('en-US')}₫</div>
             </div>
             <button class="my-btn" onclick="addProductToCart()">Mua ngay</button></div>
         </div>`}
@@ -378,10 +378,10 @@ function addProductToCart(id) {
 const cartCheckout = document.querySelector("#cart-checkout");
 
 const renderCart = () => {
-  const cartCheckOutItems = cart.map((cartItem) => {
-    const { productName, currentPrice, id, quantity } = cartItem;
-    return `
-          <tr>
+    const cartCheckOutItems = cart.map((cartItem) => {
+        const { productName, currentPrice, id, quantity, discount } = cartItem;
+        if (discount !== 0) {
+            return `<tr>
             <th scope="row">${id}</th>
             <td>
             <div class="display-product">
@@ -393,13 +393,34 @@ const renderCart = () => {
             </div>
             </td>
             <td>${quantity}</td>
-            <td>${currentPrice}₫</td>
-            <td>${quantity * currentPrice}</td>
+            <div class="pricing-display>
+            <td class ="old-price">${price}₫</td>
+            <td class ="current-price">${(price * (100 - discount) / 100).toLocaleString('en-US')}₫</td>
+            <td>${quantity * price * (100 - discount) / 100}</td>
           </tr>
       `;
-  });
+        }
+        else {
+            return `<tr>
+            <th scope="row">${id}</th>
+            <td>
+            <div class="display-product">
+            <div class="checkout-image">
+            <img src="${image}">
+            </div>
+            <div class="checkout-name">${productName}</div>
+            <div class="checkout-info">${productInfo}</div>
+            </div>
+            </td>
+            <td>${quantity}</td>
+            <td>${price}₫</td>
+            <td>${quantity * price}</td>
+          </tr>
+      `;
+        };
+    })
 
-  cartCheckout.innerHTML = cartCheckOutItems.join("");
+    cartCheckout.innerHTML = cartCheckOutItems.join("");
 };
 
 renderCart();
