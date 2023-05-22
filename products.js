@@ -4,9 +4,8 @@ productsData = [{
     image: "./assets/carousel-mirror.jpg",
     imageAfter: "./assets/hover-mirror.jpg",
     discount: 0,
-    oldPrice: "",
-    currentPrice: "19,890,000₫",
-    id: "1"
+    currentPrice: 19890000,
+    id: 1
 },
 {
     productName: "GUYON 02",
@@ -14,39 +13,37 @@ productsData = [{
     image: "./assets/carousel-shoescabinet.jpg",
     imageAfter: "./assets/hover-cabinet.jpg",
     discount: 0,
-    oldPrice: "",
-    currentPrice: "3,290,000₫",
-    id: "2"
+    currentPrice: 3290000,
+    id: 2
 },
 {
     productName: "INDIANA",
     productInfo: "Sofa Bed",
     image: "./assets/carousel-sofabed.jpg",
     imageAfter: "./assets/hover-sofa.jpg",
-    discount: -5,
-    oldPrice: "19,890,000₫",
-    currentPrice: "18,890,000₫",
-    id: "3"
+    discount: 5,
+    price: 19890000,
+    currentPrice: 18890000,
+    id: 3
 },
 {
     productName: "DOUBLE HANGER SIZE L NATURAL",
     productInfo: "Giá Treo Quần Áo",
     image: "./assets/carousel-doublehanger.jpg",
     imageAfter: "./assets/hover-doublehanger.jpg",
-    discount: -41,
-    oldPrice: "1,690,000₫",
-    currentPrice: "999,000₫",
-    id: "4"
+    discount: 41,
+    price: 1690000,
+    currentPrice: 999000,
+    id: 4
 },
 {
     productName: "POET BED NATURAL",
     productInfo: "Giường Ngủ",
     image: "https://product.hstatic.net/200000044142/product/giuong-ngu-frida-02_8d966bfeb16648d2a42e092218a1f11a_medium.jpg",
     imageAfter: "./assets/hover-poetbed.jpg",
-    discount: -5,
-    oldPrice: "",
-    currentPrice: "9,090,000₫",
-    id: "5"
+    discount: 0,
+    currentPrice: 9090000,
+    id: 5
 
 },
 {
@@ -54,10 +51,10 @@ productsData = [{
     productInfo: "Tủ Quần Áo",
     image: "./assets/carousel-wardrobe.jpg",
     imageAfter: "./assets/hover-wardrobe.jpg",
-    discount: -5,
-    oldPrice: "15,870,000₫",
-    currentPrice: "15,070,000₫",
-    id: "6"
+    discount: 5,
+    price: 15870000,
+    currentPrice: 15070000,
+    id: 6
 },
 
 {
@@ -66,29 +63,28 @@ productsData = [{
     image: "./assets/carousel-caracoffeetable.jpg",
     imageAfter: "./assets/hover-caracoffeetable.jpg",
     discount: 0,
-    oldPrice: "",
-    currentPrice: "5,450,000₫",
-    id: "13"
+    currentPrice: 5450000,
+    id: 13
 },
 {
     productName: "VIENNA",
     productInfo: "Sofa băng",
     image: "./assets/carousel-vienna.jpg",
     imageAfter: "./assets/hover-vienna.jpg",
-    discount: -5,
-    oldPrice: "17,390,000₫",
-    currentPrice: "16,520,000₫",
-    id: "7"
+    discount: 5,
+    price: 17390000,
+    currentPrice: 16520000,
+    id: 7
 },
 {
     productName: "Morel",
     productInfo: "Sofa Góc",
     image: "./assets/carousel-sofa.jpg",
     imageAfter: "./assets/hover-sofa.jpg",
-    discount: -10,
-    oldPrice: "27,990,000₫",
-    currentPrice: "26,590,000₫",
-    id: "8"
+    discount: 10,
+    price: 27990000,
+    currentPrice: 26590000,
+    id: 8
 },
 {
     productName: "AME TIVI SHELF",
@@ -96,9 +92,8 @@ productsData = [{
     image: "./assets/carousel-ametvshelf.jpg",
     imageAfter: "./assets/hover-ametvshelf.jpg",
     discount: 0,
-    oldPrice: "",
-    currentPrice: "5,390,000₫",
-    id: "9"
+    currentPrice: 5390000,
+    id: 9
 },
 {
     productName: "MITHRIL COFFEE TABLE",
@@ -106,9 +101,8 @@ productsData = [{
     image: "./assets/carousel-mithrel.jpg",
     imageAfter: "./assets/hover-mithrel.jpg",
     discount: 0,
-    oldPrice: "",
-    currentPrice: "7,619,000₫",
-    id: "10"
+    currentPrice: 7619000,
+    id: 10
 },
 {
     productName: "FRANE COFFEE TABLE",
@@ -116,60 +110,59 @@ productsData = [{
     image: "./assets/carousel-coffeetable.jpg",
     imageAfter: "./assets/hover-caracoffeetable.jpg",
     discount: 0,
-    oldPrice: "",
-    currentPrice: "4,229,000₫",
-    id: "11"
+    price: "",
+    currentPrice: 4229000,
+    id: 11
 },
 {
     productName: "Bee Table White",
     productInfo: "Bàn Trà - Bàn Sofa",
     image: "./assets/carousel-beetable.jpg",
     imageAfter: "./assets/hover-beetable.jpg",
-    discount: -41,
-    oldPrice: "459,000₫",
-    currentPrice: "299,000₫",
-    id: "12"
+    discount: 41,
+    price: 459000,
+    currentPrice: 299000,
+    id: 12
 },
 {
     productName: "A Case Pink",
     productInfo: "Kệ đa năng",
     image: "./assets/carousel-pinkcases.jpg",
     imageAfter: "./assets/hover-pinkcases.jpg",
-    discount: -49,
-    oldPrice: "389,000₫",
-    currentPrice: "199,000₫",
-    id: "14"
+    discount: 49,
+    price: 389000,
+    currentPrice: 199000,
+    id: 14
 },
 {
     productName: "NARI DINNER TABLE SIZE S BROWN",
     productInfo: "Bộ bàn ăn",
     image: "./assets/carousel-nari.jpg",
     imageAfter: "./assets/hover-nari.jpg",
-    discount: -6,
-    oldPrice: "6,040,000₫",
-    currentPrice: "5,693,000₫",
-    id: "15"
+    discount: 6,
+    price: 6040000,
+    currentPrice: 5693000,
+    id: 15
 },
 {
     productName: "Bey Cabinet 2F Brown",
     productInfo: "Kệ sách",
     image: "./assets/carousel-beycabinet.jpg",
     imageAfter: "./assets/hover-beycabinet.jpg",
-    discount: -50,
-    oldPrice: "399,000₫",
-    currentPrice: "199,000₫",
-    id: "15"
+    discount: 50,
+    price: 399000,
+    currentPrice: 199000,
+    id: 15
 }
 
 ]
-
 // function để loop product card
 const initProductsElement = () => {
     const productsDataElement = document.querySelector("#home-featured-products .productsCard");
     let listProducts = "";
     for (i = 0; i < productsData.length; i++) {
         const products = productsData[i];
-        const { productName, productInfo, image, imageAfter, discount, oldPrice, currentPrice } = products;
+        const { productName, productInfo, image, imageAfter, discount, price, currentPrice } = products;
         if (discount === 0) {
             listProducts += `<div class="box-01 col">
         <div class="img-container">
@@ -182,10 +175,9 @@ const initProductsElement = () => {
         <div class="product-info">${productInfo}
         </div>
         <div class="price">
-            <div class="old-price">${oldPrice}</div>
-            <div class="current-price">${currentPrice}</div>
+            <div class="current-price">${currentPrice.toLocaleString('en-US')}₫</div>
         </div>
-        <button class="my-btn">Mua ngay</button>
+        <button class="my-btn" onclick="addProductToCart()">Mua ngay</button>
         </div>
     </div>`
         }
@@ -195,17 +187,17 @@ const initProductsElement = () => {
             <div class="img-container">
             <img class="img-before" src=${image} alt="">
             <img class="img-after" src=${imageAfter} alt="">
-                <span class="discount">${discount}%</span>
+                <span class="discount">-${discount}%</span>
             </div>
             <div class="products">
             <div><a href="" class="product-name">${productName} </a></div>
             <div class="product-info">${productInfo}
             </div>
             <div class="price">
-                <div class="old-price">${oldPrice}</div>
-                <div class="current-price">${currentPrice}</div>
+                <div class="old-price">${price.toLocaleString('en-US')}₫</div>
+                <div class="current-price">${(price*(100-discount)/100).toLocaleString('en-US')}₫</div>
             </div>
-            <button class="my-btn">Mua ngay</button></div>
+            <button class="my-btn" onclick="addProductToCart()">Mua ngay</button></div>
         </div>`};
 
     }
@@ -227,7 +219,7 @@ const firstDiscountIndex = findFirstDiscountIndex((productsData))
 // const initProductsElement2 = () => {
 //     const productsDataElement2 = document.querySelector("#home-flashsale .row");
 //     const processingProductsCard = productsData.map((product, index) => {
-//         const { productName, productInfo, image, imageAfter, discount, oldPrice, currentPrice, id } = product;
+//         const { productName, productInfo, image, imageAfter, discount, price, currentPrice, id } = product;
 //         if (discount !== 0 && id===firstDiscountIndex) {
 //             return `<div class="box-01 carousel-item active" data-bs-interval="10000">
 //     <div class="img-container">
@@ -240,7 +232,7 @@ const firstDiscountIndex = findFirstDiscountIndex((productsData))
 //     <div class="product-info">${productInfo}
 //     </div>
 //     <div class="price">
-//         <div class="old-price">${oldPrice}</div>
+//         <div class="old-price">${price}</div>
 //         <div class="current-price">${currentPrice}</div>
 //     </div>
 //     <button class="my-btn">Mua ngay</button>
@@ -257,7 +249,7 @@ const firstDiscountIndex = findFirstDiscountIndex((productsData))
 //     <div class="product-info">${productInfo}
 //     </div>
 //     <div class="price">
-//         <div class="old-price">${oldPrice}</div>
+//         <div class="old-price">${price}</div>
 //         <div class="current-price">${currentPrice}</div>
 //     </div>
 //     <button class="my-btn">Mua ngay</button>
@@ -270,24 +262,24 @@ const firstDiscountIndex = findFirstDiscountIndex((productsData))
 
 const initProductsElement2 = () => {
     const productsDataElement2 = document.querySelector("#home-flashsale .track");
-    const processingProductsCard = productsData.map((product, index) => {
-        const { productName, productInfo, image, imageAfter, discount, oldPrice, currentPrice, id } = product;
+    const processingProductsCard = productsData.map((product) => {
+        const { productName, productInfo, image, imageAfter, discount, price, currentPrice, id } = product;
         if (discount !== 0) {
             return `<div class="box-01 col">
             <div class="img-container">
             <img class="img-before" src=${image} alt="">
             <img class="img-after" src=${imageAfter} alt="">
-                <span class="discount">${discount}%</span>
+                <span class="discount">-${discount}%</span>
             </div>
             <div class="products">
             <div><a href="" class="product-name">${productName} </a></div>
             <div class="product-info">${productInfo}
             </div>
             <div class="price">
-                <div class="old-price">${oldPrice}</div>
-                <div class="current-price">${currentPrice}</div>
+            <div class="old-price">${price.toLocaleString('en-US')}₫</div>
+            <div class="current-price">${(price*(100-discount)/100).toLocaleString('en-US')}₫</div>
             </div>
-            <button class="my-btn">Mua ngay</button></div>
+            <button class="my-btn" onclick="addProductToCart()">Mua ngay</button></div>
         </div>`}
     })
     console.log(processingProductsCard);
@@ -350,3 +342,64 @@ preBtn.addEventListener('click', () => {
 })
 
 console.log(carouselWidth);
+
+// Add product to cart
+
+let cart = [];
+
+const loadCartInformation = () => {
+    const cartInString = localStorage.getItem("cart");
+    cart = JSON.parse(cartInString) || [];
+};
+loadCartInformation();
+
+const saveCartToLocalStorage = (cart) => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+};
+
+function addProductToCart(id) {
+    // Step 1: Tìm sản phẩm vừa được click trong list sản phẩm ban đầu
+    const selectedProduct = productsData.find((product) => Number(product.id) === id);
+    // Step 2: Kiểm tra sản phảm tồn tại trong giỏ hàng hay chưa
+    const productInCartIndex = cart.findIndex(
+        (cartItem) => Number(cartItem.id) === id
+    );
+    if (productInCartIndex !== -1) {
+        cart[productInCartIndex].quantity += 1;
+    } else {
+        selectedProduct.quantity = 1;
+        cart.push(selectedProduct);
+    }
+    saveCartToLocalStorage(cart);
+}
+
+// Render cart ra UI (work in progress nha)
+
+const cartCheckout = document.querySelector("#cart-checkout");
+
+const renderCart = () => {
+  const cartCheckOutItems = cart.map((cartItem) => {
+    const { productName, currentPrice, id, quantity } = cartItem;
+    return `
+          <tr>
+            <th scope="row">${id}</th>
+            <td>
+            <div class="display-product">
+            <div class="checkout-image">
+            <img src="${image}">
+            </div>
+            <div class="checkout-name">${productName}</div>
+            <div class="checkout-info">${productInfo}</div>
+            </div>
+            </td>
+            <td>${quantity}</td>
+            <td>${currentPrice}₫</td>
+            <td>${quantity * currentPrice}</td>
+          </tr>
+      `;
+  });
+
+  cartCheckout.innerHTML = cartCheckOutItems.join("");
+};
+
+renderCart();
