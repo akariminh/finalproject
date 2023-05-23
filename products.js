@@ -4,7 +4,7 @@ productsData = [{
     image: "./assets/carousel-mirror.jpg",
     imageAfter: "./assets/hover-mirror.jpg",
     discount: 0,
-    currentPrice: 19890000,
+    price: 19890000,
     id: 1
 },
 {
@@ -13,7 +13,7 @@ productsData = [{
     image: "./assets/carousel-shoescabinet.jpg",
     imageAfter: "./assets/hover-cabinet.jpg",
     discount: 0,
-    currentPrice: 3290000,
+    price: 3290000,
     id: 2
 },
 {
@@ -23,7 +23,6 @@ productsData = [{
     imageAfter: "./assets/hover-sofa.jpg",
     discount: 5,
     price: 19890000,
-    currentPrice: 18890000,
     id: 3
 },
 {
@@ -33,7 +32,6 @@ productsData = [{
     imageAfter: "./assets/hover-doublehanger.jpg",
     discount: 41,
     price: 1690000,
-    currentPrice: 999000,
     id: 4
 },
 {
@@ -42,7 +40,7 @@ productsData = [{
     image: "https://product.hstatic.net/200000044142/product/giuong-ngu-frida-02_8d966bfeb16648d2a42e092218a1f11a_medium.jpg",
     imageAfter: "./assets/hover-poetbed.jpg",
     discount: 0,
-    currentPrice: 9090000,
+    price: 9090000,
     id: 5
 
 },
@@ -53,7 +51,6 @@ productsData = [{
     imageAfter: "./assets/hover-wardrobe.jpg",
     discount: 5,
     price: 15870000,
-    currentPrice: 15070000,
     id: 6
 },
 
@@ -63,7 +60,7 @@ productsData = [{
     image: "./assets/carousel-caracoffeetable.jpg",
     imageAfter: "./assets/hover-caracoffeetable.jpg",
     discount: 0,
-    currentPrice: 5450000,
+    price: 5450000,
     id: 13
 },
 {
@@ -73,7 +70,6 @@ productsData = [{
     imageAfter: "./assets/hover-vienna.jpg",
     discount: 5,
     price: 17390000,
-    currentPrice: 16520000,
     id: 7
 },
 {
@@ -83,7 +79,6 @@ productsData = [{
     imageAfter: "./assets/hover-sofa.jpg",
     discount: 10,
     price: 27990000,
-    currentPrice: 26590000,
     id: 8
 },
 {
@@ -92,7 +87,7 @@ productsData = [{
     image: "./assets/carousel-ametvshelf.jpg",
     imageAfter: "./assets/hover-ametvshelf.jpg",
     discount: 0,
-    currentPrice: 5390000,
+    price: 5390000,
     id: 9
 },
 {
@@ -101,7 +96,7 @@ productsData = [{
     image: "./assets/carousel-mithrel.jpg",
     imageAfter: "./assets/hover-mithrel.jpg",
     discount: 0,
-    currentPrice: 7619000,
+    price: 7619000,
     id: 10
 },
 {
@@ -110,8 +105,7 @@ productsData = [{
     image: "./assets/carousel-coffeetable.jpg",
     imageAfter: "./assets/hover-caracoffeetable.jpg",
     discount: 0,
-    price: "",
-    currentPrice: 4229000,
+    price: 4229000,
     id: 11
 },
 {
@@ -121,7 +115,6 @@ productsData = [{
     imageAfter: "./assets/hover-beetable.jpg",
     discount: 41,
     price: 459000,
-    currentPrice: 299000,
     id: 12
 },
 {
@@ -131,7 +124,6 @@ productsData = [{
     imageAfter: "./assets/hover-pinkcases.jpg",
     discount: 49,
     price: 389000,
-    currentPrice: 199000,
     id: 14
 },
 {
@@ -141,7 +133,6 @@ productsData = [{
     imageAfter: "./assets/hover-nari.jpg",
     discount: 6,
     price: 6040000,
-    currentPrice: 5693000,
     id: 15
 },
 {
@@ -151,7 +142,6 @@ productsData = [{
     imageAfter: "./assets/hover-beycabinet.jpg",
     discount: 50,
     price: 399000,
-    currentPrice: 199000,
     id: 15
 }
 
@@ -162,7 +152,7 @@ const initProductsElement = () => {
     let listProducts = "";
     for (i = 0; i < productsData.length; i++) {
         const products = productsData[i];
-        const { productName, productInfo, image, imageAfter, discount, price, currentPrice } = products;
+        const { productName, productInfo, image, imageAfter, discount, price, id } = products;
         if (discount === 0) {
             listProducts += `<div class="box-01 col">
         <div class="img-container">
@@ -175,9 +165,9 @@ const initProductsElement = () => {
         <div class="product-info">${productInfo}
         </div>
         <div class="price">
-            <div class="current-price">${currentPrice.toLocaleString('en-US')}₫</div>
+            <div class="current-price">${price.toLocaleString('en-US')}₫</div>
         </div>
-        <button class="my-btn" onclick="addProductToCart()">Mua ngay</button>
+        <button class="my-btn" onclick="addProductToCart(${id})">Mua ngay</button>
         </div>
     </div>`
         }
@@ -197,7 +187,7 @@ const initProductsElement = () => {
                 <div class="old-price">${price.toLocaleString('en-US')}₫</div>
                 <div class="current-price">${(price * (100 - discount) / 100).toLocaleString('en-US')}₫</div>
             </div>
-            <button class="my-btn" onclick="addProductToCart()">Mua ngay</button></div>
+            <button class="my-btn" onclick="addProductToCart(${id})">Mua ngay</button></div>
         </div>`};
 
     }
@@ -263,7 +253,7 @@ const firstDiscountIndex = findFirstDiscountIndex((productsData))
 const initProductsElement2 = () => {
     const productsDataElement2 = document.querySelector("#home-flashsale .track");
     const processingProductsCard = productsData.map((product) => {
-        const { productName, productInfo, image, imageAfter, discount, price, currentPrice, id } = product;
+        const { productName, productInfo, image, imageAfter, discount, price, id } = product;
         if (discount !== 0) {
             return `<div class="box-01 col">
             <div class="img-container">
@@ -279,10 +269,9 @@ const initProductsElement2 = () => {
             <div class="old-price">${price.toLocaleString('en-US')}₫</div>
             <div class="current-price">${(price * (100 - discount) / 100).toLocaleString('en-US')}₫</div>
             </div>
-            <button class="my-btn" onclick="addProductToCart()">Mua ngay</button></div>
+            <button class="my-btn" onclick="addProductToCart(${id})">Mua ngay</button></div>
         </div>`}
     })
-    console.log(processingProductsCard);
     productsDataElement2.innerHTML = processingProductsCard.join("");
 }
 
@@ -347,23 +336,19 @@ console.log(carouselWidth);
 
 let cart = [];
 
-const loadCartInformation = () => {
-    const cartInString = localStorage.getItem("cart");
-    cart = JSON.parse(cartInString) || [];
-};
-loadCartInformation();
-
 const saveCartToLocalStorage = (cart) => {
     localStorage.setItem("cart", JSON.stringify(cart));
 };
 
+const loadCartInformation = () => {
+    const cartInString = localStorage.getItem("cart");
+    cart = JSON.parse(cartInString) || [];
+};
+// loadCartInformation();
+
 function addProductToCart(id) {
-    // Step 1: Tìm sản phẩm vừa được click trong list sản phẩm ban đầu
     const selectedProduct = productsData.find((product) => Number(product.id) === id);
-    // Step 2: Kiểm tra sản phảm tồn tại trong giỏ hàng hay chưa
-    const productInCartIndex = cart.findIndex(
-        (cartItem) => Number(cartItem.id) === id
-    );
+    const productInCartIndex = cart.findIndex((cartItem) => Number(cartItem.id) === id);
     if (productInCartIndex !== -1) {
         cart[productInCartIndex].quantity += 1;
     } else {
@@ -371,56 +356,5 @@ function addProductToCart(id) {
         cart.push(selectedProduct);
     }
     saveCartToLocalStorage(cart);
+    console.log(cart);
 }
-
-// Render cart ra UI (work in progress nha)
-
-const cartCheckout = document.querySelector("#cart-checkout");
-
-const renderCart = () => {
-    const cartCheckOutItems = cart.map((cartItem) => {
-        const { productName, currentPrice, id, quantity, discount } = cartItem;
-        if (discount !== 0) {
-            return `<tr>
-            <th scope="row">${id}</th>
-            <td>
-            <div class="display-product">
-            <div class="checkout-image">
-            <img src="${image}">
-            </div>
-            <div class="checkout-name">${productName}</div>
-            <div class="checkout-info">${productInfo}</div>
-            </div>
-            </td>
-            <td>${quantity}</td>
-            <div class="pricing-display>
-            <td class ="old-price">${price}₫</td>
-            <td class ="current-price">${(price * (100 - discount) / 100).toLocaleString('en-US')}₫</td>
-            <td>${quantity * price * (100 - discount) / 100}</td>
-          </tr>
-      `;
-        }
-        else {
-            return `<tr>
-            <th scope="row">${id}</th>
-            <td>
-            <div class="display-product">
-            <div class="checkout-image">
-            <img src="${image}">
-            </div>
-            <div class="checkout-name">${productName}</div>
-            <div class="checkout-info">${productInfo}</div>
-            </div>
-            </td>
-            <td>${quantity}</td>
-            <td>${price}₫</td>
-            <td>${quantity * price}</td>
-          </tr>
-      `;
-        };
-    })
-
-    cartCheckout.innerHTML = cartCheckOutItems.join("");
-};
-
-renderCart();
