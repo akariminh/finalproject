@@ -27,7 +27,7 @@ const renderCart = () => {
       </th>
       <td>
           <div class="checkout-product-info">
-              <div class="checkout-name">${productName}/div>
+              <div class="checkout-name">${productName}</div>
               <div class="checkout-info">${productInfo}</div>
           </div>
       </td>
@@ -73,20 +73,22 @@ const renderCart = () => {
 };
 renderCart();
 
+// Tính tổng số tiền và render ra giao diện
 const rendertotalprice = () => {
-const totalOriginalPrice = cart.filter(function (cart) {
-  return cart.discount <= 0
-}).reduce((total, cartItem) => {
-  const { price, quantity } = cartItem;
-  return total += quantity * price;
-}, 0);
-const totalPriceWithDiscount = cart.filter(function (cart) {
-  return cart.discount > 0
-}).reduce((total, cartItem) => {
-  const { price, quantity, discount } = cartItem;
-  return total += quantity * price * (100 - discount) / 100;
-}, 0);
-const totalPrice = totalOriginalPrice + totalPriceWithDiscount;
-return totalPriceElement.innerHTML = `${totalPrice.toLocaleString('en-US')}₫`}
+  const totalOriginalPrice = cart.filter(function (cart) {
+    return cart.discount <= 0
+  }).reduce((total, cartItem) => {
+    const { price, quantity } = cartItem;
+    return total += quantity * price;
+  }, 0);
+  const totalPriceWithDiscount = cart.filter(function (cart) {
+    return cart.discount > 0
+  }).reduce((total, cartItem) => {
+    const { price, quantity, discount } = cartItem;
+    return total += quantity * price * (100 - discount) / 100;
+  }, 0);
+  const totalPrice = totalOriginalPrice + totalPriceWithDiscount;
+  return totalPriceElement.innerHTML = `${totalPrice.toLocaleString('en-US')}₫`
+}
 
 rendertotalprice();

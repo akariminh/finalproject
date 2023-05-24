@@ -372,6 +372,7 @@ box-01:hover img:last-child {
 
 .wrap {
     display: flex;
+    justify-content: space-evenly;
     color: #737373;
     width: 90%;
     margin: auto;
@@ -480,8 +481,16 @@ input:focus, input:hover{
 
 #finalize-fee{
     border-top: 1px solid #999;
+    width:100%;
+}
+.form-group.invalid .form-control {
+    border-color: #f33a58;
 }
 
+.form-group.invalid .form-message {
+    color: #f33a58;
+    font-size: 10px;
+}
 td, tr {
     margin-top: 50px;
     padding: 15px;

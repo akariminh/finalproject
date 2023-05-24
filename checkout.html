@@ -34,25 +34,45 @@
             </header>
             <div class="row">
                 <form onsubmit="" id="myForm">
-                    <div class="col-12 mb-3">
+                    <div class="col-12 mb-3 form-group">
                         <input id="name" focus="name" type="text" placeholder="Họ và tên" class="form-control" required>
+                        <span class="form-message"></span>
                     </div>
-                    <div class="row col-12 mb-3">
-                        <div class="col-12 col-lg-6">
+                    <div class="col-12 mb-3">
+                        <div class="col-12 col-lg-6 mb-3 form-group">
                             <input id="email" focus="email" type="email" placeholder="Email, vd: me@example.com"
                                 class="form-control" required>
+                            <span class="form-message"></span>
                         </div>
-                        <div class="col-12 col-lg-6"> <input id="number" type="phone-number" placeholder="Điện thoại"
-                                class="form-control" required>
+                        <!-- </div> -->
+                        <!-- <div class="col-12 mb-3 form-group">  -->
+                        <div class="col-12 col-lg-6 mb-3 form-group">
+                            <input id="phone-number" type="number" placeholder="Điện thoại" class="form-control"
+                                required>
+                            <span class="form-message"></span>
                         </div>
+
                     </div>
-                    <div class="col-12 mb-3">
+                    <div class="col-12 mb-3 form-group">
                         <input id="address" focus="address" type="text" placeholder="Địa chỉ" class="form-control"
                             required>
+                        <span class="form-message"></span>
+
                     </div>
-                    <div class="col-12 mb-3">
-                        <select class="form-select" id="province" name="province"></select>
-                    </div>
+                    <form class="dropdown-group">
+                        <select id="Province" size="1">
+                            <option value="" selected="selected">Tỉnh</option>
+                        </select>
+
+                        <select id="District" size="1">
+                            <option value="" selected="selected">Quận/Huyện</option>
+                        </select>
+
+                        <select id="Ward" size="1">
+                            <option value="" selected="selected">Phường/Xã</option>
+                        </select>
+
+                    </form>
                 </form>
             </div>
         </div>
@@ -98,10 +118,34 @@
         </div>
     </div>
     <script src="./cart.js"></script>
+    <script src="./form.js"></script>
+
     <!-- Link Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
         integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
         crossorigin="anonymous"></script>
+    <!-- Config -->
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            Validator({
+                form: '#myForm',
+                formGroupSelector: '.form-group',
+                errorSelector: '.form-message',
+                rules: [
+                    Validator.isRequired('#name', 'Vui lòng nhập tên'),
+                    Validator.isEmail('#email'),
+                    Validator.isPhoneNumber('#phone-number'),
+                    Validator.isRequired('#address', 'Vui lòng nhập địa chỉ')
+                ],
+                onSubmit: function (data) {
+                    // Call API
+                    console.log(data);
+                }
+            });
+        });
+
+    </script>
 </body>
 
 </html>
