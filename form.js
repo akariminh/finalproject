@@ -15,11 +15,7 @@ function Validator(options) {
         let errorElement = getParent(inputElement, options.formGroupSelector).querySelector(options.errorSelector);
         let errorMessage;
 
-        // Lấy ra các rules của selector
         let rules = selectorRules[rule.selector];
-
-        // Lặp qua từng rule & kiểm tra
-        // Nếu có lỗi thì dừng việc kiểm
         for (let i = 0; i < rules.length; ++i) {
             switch (inputElement.type) {
                 case 'radio':
@@ -98,10 +94,7 @@ function Validator(options) {
             }
         }
 
-        // Lặp qua mỗi rule và xử lý (lắng nghe sự kiện blur, input, ...)
         options.rules.forEach(function (rule) {
-
-            // Lưu lại các rules cho mỗi input
             if (Array.isArray(selectorRules[rule.selector])) {
                 selectorRules[rule.selector].push(rule.test);
             } else {
@@ -111,12 +104,10 @@ function Validator(options) {
             let inputElements = formElement.querySelectorAll(rule.selector);
 
             Array.from(inputElements).forEach(function (inputElement) {
-                // Xử lý trường hợp blur khỏi input
                 inputElement.onblur = function () {
                     validate(inputElement, rule);
                 }
 
-                // Xử lý mỗi khi người dùng nhập vào input
                 inputElement.oninput = function () {
                     let errorElement = getParent(inputElement, options.formGroupSelector).querySelector(options.errorSelector);
                     errorElement.innerText = '';
@@ -154,5 +145,16 @@ Validator.isPhoneNumber = function (selector, message) {
             let phoneregex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
             return phoneregex.test(value) ? undefined : message || 'Vui lòng nhập số phone'
         }
+    }
+}
+
+// Function check để hiển thị thông tin đặt hàng
+
+const radiosEle = document.querySelectorAll('input[type="radio"]');
+const blankSlateText = document.querySelectorAll('.blank-slate ')
+
+for (let i = 0; i < radiosEle.length; i++) {
+    radiosEle[i].onclick = function () {
+        blankSlateText[i].classList.add("active");
     }
 }

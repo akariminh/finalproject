@@ -38,7 +38,7 @@ const renderCart = () => {
               </div>
           </div>
       </td>
-      <td class="current-price">${(quantity * price * (100 - discount) / 100).toLocaleString('en-US')}</td>
+      <td class="current-price">${(quantity * price * (100 - discount) / 100).toLocaleString('en-US')}₫</td>
   </tr>`;
     }
     else {
@@ -54,7 +54,7 @@ const renderCart = () => {
       </th>
       <td>
           <div class="checkout-product-info">
-              <div class="checkout-name">${productName}/div>
+              <div class="checkout-name">${productName}</div>
               <div class="checkout-info">${productInfo}</div>
           </div>
       </td>
@@ -64,7 +64,7 @@ const renderCart = () => {
               </div>
           </div>
       </td>
-      <td class="current-price">${(quantity * price).toLocaleString('en-US')}</td>
+      <td class="current-price">${(quantity * price).toLocaleString('en-US')}₫</td>
   </tr>`;
     };
   })
